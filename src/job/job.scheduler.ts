@@ -6,9 +6,9 @@ import { JobService } from './job.service';
 export class JobScheduler {
     constructor(private readonly jobService: JobService) { }
 
-    @Cron(CronExpression.EVERY_MINUTE)
+    @Cron(CronExpression.EVERY_10_MINUTES)
     async handleCron() {
-        console.log('Fetching jobs every 1 minute...');
+        console.log('Fetching jobs every 10 minutes...');
         await this.jobService.fetchJobs();
     }
 }
