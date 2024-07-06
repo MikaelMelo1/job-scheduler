@@ -4,11 +4,11 @@ import { JobService } from './job.service';
 
 @Injectable()
 export class JobScheduler {
-    constructor(private readonly jobService: JobService) { }
+  constructor(private readonly jobService: JobService) {}
 
-    @Cron(CronExpression.EVERY_10_MINUTES)
-    async handleCron() {
-        console.log('Fetching jobs every 10 minutes...');
-        await this.jobService.fetchJobs();
-    }
+  @Cron(CronExpression.EVERY_12_HOURS)
+  async handleCron() {
+    console.log('Fetching jobs every 12 hours...');
+    await this.jobService.fetchJobs();
+  }
 }
